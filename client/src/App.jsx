@@ -1,9 +1,26 @@
 import React from "react";
+import { StreamChat } from "stream-chat";
+import { Chat } from "stream-chat-react";
+import Cookies from "universal-cookie";
+
+import { ChannelContainer, ChannelListContainer } from "./components";
+
+import './App.css'
+
+const apiKey = 'awgy52u4ecmd';
+const client = StreamChat.getInstance(apiKey);
 
 const App = () => {
     return(
-        <div>
-            <h1>Chat App social media (Discord Clone)</h1>
+        <div className="app__wrapper">
+            <Chat client={client} theme='team dark'>
+                <ChannelListContainer
+
+                />
+                <ChannelContainer
+
+                />
+            </Chat>
         </div>
     );
 }
